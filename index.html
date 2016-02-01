@@ -1,0 +1,26 @@
+<html ng-controller="CalculatorController as calc">
+<head>
+    <meta charset="UTF-8">
+    <title>My Calculator</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+</head>
+<body ng-controller="ViewController as myView">
+    <button ng-click="myView.viewSetter('Distance')">Distance</button>
+        <button ng-click="myView.viewSetter('Tempature')">Tempature</button>
+            <button ng-click="myView.viewSetter('Weight')">Weight</button>    
+            <button ng-click="myView.viewSetter('Length')">Length</button>
+        <button ng-click="myView.viewSetter('Volume')">Volume</button>
+        <button ng-click="myView.viewSetter('BMI Calculator')">Body Mass Index Calculator</button>
+            <button ng-click="myView.viewSetter('Currency')">Currency</button>
+        <button ng-click="myView.viewSetter('Distance')">Distance</button>
+            <button ng-click="myView.viewSetter('Loan')">Loan Functions</button>
+            
+            <div>
+                <label for="input-slot">{{myView.currentView}} Calculator</label>
+                <input name="input-slot" type="number">
+            </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+    <script src="app/app.js"></script>
+</body>
+</html>
