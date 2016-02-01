@@ -2,6 +2,16 @@
 <head>
     <meta charset="UTF-8">
     <title>My Calculator</title>
+    
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
 <body ng-controller="ViewController as myView">
@@ -10,14 +20,15 @@
             <button ng-click="myView.viewSetter('Weight')">Weight</button>    
             <button ng-click="myView.viewSetter('Length')">Length</button>
         <button ng-click="myView.viewSetter('Volume')">Volume</button>
-        <button ng-click="myView.viewSetter('BMI Calculator')">Body Mass Index Calculator</button>
             <button ng-click="myView.viewSetter('Currency')">Currency</button>
-        <button ng-click="myView.viewSetter('Distance')">Distance</button>
+        <button ng-click="myView.viewSetter('BMI')">Body Mass Index Calculator</button>
             <button ng-click="myView.viewSetter('Loan')">Loan Functions</button>
             
             <div>
                 <label for="input-slot">{{myView.currentView}} Calculator</label>
                 <input name="input-slot" type="number">
+                <label for="conv-direction">{{myView.convDirection}}</label>
+                <input name="conv-direction" type="radio">
             </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
