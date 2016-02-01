@@ -1,37 +1,51 @@
-<html ng-controller="CalculatorController as calc">
+<html ng-app="ConversionCalculatorProject">
+
 <head>
     <meta charset="UTF-8">
     <title>My Calculator</title>
-    
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+    crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+   
+
     <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
+
 <body ng-controller="ViewController as myView">
-    <button ng-click="myView.viewSetter('Distance')">Distance</button>
-        <button ng-click="myView.viewSetter('Tempature')">Tempature</button>
-            <button ng-click="myView.viewSetter('Weight')">Weight</button>    
-            <button ng-click="myView.viewSetter('Length')">Length</button>
-        <button ng-click="myView.viewSetter('Volume')">Volume</button>
-            <button ng-click="myView.viewSetter('Currency')">Currency</button>
-        <button ng-click="myView.viewSetter('BMI')">Body Mass Index Calculator</button>
-            <button ng-click="myView.viewSetter('Loan')">Loan Functions</button>
-            
-            <div>
-                <label for="input-slot">{{myView.currentView}} Calculator</label>
-                <input name="input-slot" type="number">
-                <label for="conv-direction">{{myView.convDirection}}</label>
-                <input name="conv-direction" type="radio">
-            </div>
-    
+    <button ng-click="myView.viewSetter('Distance')" ng-class="{active:myView.currentView === 'Distance'}">Distance</button>
+    <button ng-click="myView.viewSetter('Tempature')" ng-class="{active:myView.currentView === 'Tempature'}">Tempature</button>
+    <button ng-click="myView.viewSetter('Weight')" ng-class="{active:myView.currentView === 'Weight'}">Weight</button>
+    <button ng-click="myView.viewSetter('Length')" ng-class="{active:myView.currentView === 'Length'}">Length</button>
+    <button ng-click="myView.viewSetter('Volume')" ng-class="{active:myView.currentView === 'Volume'}">Volume</button>
+    <button ng-click="myView.viewSetter('Currency')" ng-class="{active:myView.currentView === 'Currency'}">Currency</button>
+   <button ng-click="myView.viewSetter('BMI')" ng-class="{active:myView.currentView === 'BMI'}">Body Mass Index Calculator</button>
+    <button ng-click="myView.viewSetter('Loan')" ng-class="{active:myView.currentView === 'Loan'}">Loan Functions</button>
+
+    <div>
+        <form novalidate ng-submit="myView.ConvController(numIn, units)">
+        <label for="input-slot">{{myView.currentView}} Calculator</label>
+        <input name="input-slot" type="number" ng-model="numIn">
+        <br/>
+        <label for="conv-direction">Convert from:{{myView.currentView}} {{myView.unitRefObj[myView.currentView].unit[0]}} or {{myView.unitRefObj[myView.currentView].unit[1]}}</label>
+        <input name="conv-direction" type="radio" ng-model="units">
+        <input name="conv-direction" type="radio" ng-model="units">
+    </form>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
     <script src="app/app.js"></script>
 </body>
+
 </html>
